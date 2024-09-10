@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HealthDisparity-AI/static/css/main.96fce91c.css",
+    "main.js": "/HealthDisparity-AI/static/js/main.27232a11.js",
+    "static/js/453.001a63be.chunk.js": "/HealthDisparity-AI/static/js/453.001a63be.chunk.js",
+    "index.html": "/HealthDisparity-AI/index.html",
+    "main.96fce91c.css.map": "/HealthDisparity-AI/static/css/main.96fce91c.css.map",
+    "main.27232a11.js.map": "/HealthDisparity-AI/static/js/main.27232a11.js.map",
+    "453.001a63be.chunk.js.map": "/HealthDisparity-AI/static/js/453.001a63be.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96fce91c.css",
+    "static/js/main.27232a11.js"
+  ]
+}
