@@ -114,21 +114,14 @@ export async function getResourcesRecommendations(data: UserInput) {
 
   return response ? (response.data as RecommendationsAndTrends) : null;
 }
-
+// [Changed to API]
 export async function handleSearchHeathCare(data: SearchData) {
   try {
-    const response = await axios.request({
-      url: "api/",
-      method: "get",
-      params: {
-        city: data.search_city,
-        state: data.search_state,
-        postal_code: data.search_postalCode,
-        taxonomy_description: data.search_taxonomy,
-        version: "2.1",
-      },
+    let response = await axios.request({
+      url: "https://kaput-busy-salmonberry.glitch.me/searchForHeathCareProviders",
+      method: "post",
+      data,
     });
-
     return response.data.results as Provider[];
   } catch (error) {
     console.error("Error fetching data:", error);

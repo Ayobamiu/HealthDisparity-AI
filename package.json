@@ -1,7 +1,6 @@
 {
   "name": "health-disparity-dashboard",
   "version": "0.1.0",
-  "proxy": "https://npiregistry.cms.hhs.gov",
   "private": true,
   "dependencies": {
     "@ant-design/charts": "^2.2.1",
