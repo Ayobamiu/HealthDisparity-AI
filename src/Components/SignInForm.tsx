@@ -101,7 +101,6 @@ const SignInForm: React.FC<{ title?: string; className?: string }> = ({
       <div className="lg:hidden">
         <Button
           type="primary"
-          shape="circle"
           onClick={() => {
             user ? setShowPop(true) : showDrawer();
           }}
