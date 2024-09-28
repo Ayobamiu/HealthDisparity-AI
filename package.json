@@ -1,7 +1,6 @@
 {
   "name": "health-disparity-dashboard",
   "version": "0.1.0",
-  "homepage": "https://Ayobamiu.github.io/HealthDisparity-AI",
   "proxy": "https://npiregistry.cms.hhs.gov",
   "private": true,
   "dependencies": {
