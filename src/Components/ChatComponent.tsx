@@ -102,7 +102,7 @@ const ChatComponent: React.FC<{ type: ThreadEnum }> = ({ type }) => {
 
           // If new messages from assistant are received, update the state
           if (m) {
-            setMessages((prevMessages) => [...prevMessages, ...m.data]);
+            setMessages(m.data);
             scrollToTheBottom(); // Ensure the chat scrolls to the bottom
           }
         }
