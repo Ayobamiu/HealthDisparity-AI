@@ -89,7 +89,9 @@ const HealthcareSearch: React.FC = () => {
 
   const search = async () => {
     const searchResults = await handleSearchHeathCare(searchData);
-    setResults(searchResults);
+    if (searchResults) {
+      setResults(searchResults);
+    }
   };
 
   return (
@@ -145,7 +147,7 @@ const HealthcareSearch: React.FC = () => {
       </button>
 
       <div className="mt-6">
-        {results.length > 0 ? (
+        {results?.length > 0 ? (
           <div>
             <h2 className="text-xl font-semibold mb-4">Search Results:</h2>
             <ul>
