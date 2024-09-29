@@ -74,7 +74,10 @@ export default function ResourceRecommendations() {
         <h1 className="text-3xl font-bold mb-6">
           Health and Social Support Dashboard
         </h1>
-        <Spin spinning={loading} />
+        <div className="w-full flex justify-center">
+          <Spin className="m-8" spinning={loading} />
+        </div>
+
         {aiData && (
           <div className="grid grid-cols-2 gap-6">
             <div className="col-span-1">

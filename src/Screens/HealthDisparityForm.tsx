@@ -46,7 +46,9 @@ const HealthDisparityForm = () => {
 
   return (
     <div>
-      <Spin spinning={findingExistingDoc} />
+      <div className="w-full flex justify-center">
+        <Spin className="m-8" spinning={findingExistingDoc} />
+      </div>
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 my-5 rounded-lg shadow-md max-w-xl w-full">
           <h1 className="text-2xl font-bold text-center mb-6">
@@ -76,8 +78,16 @@ const HealthDisparityForm = () => {
                 required
               >
                 <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="Man">Man </option>
+                <option value="Woman">Woman</option>
+                <option value="Transgender Man">Transgender Man</option>
+                <option value="Transgender Woman">Transgender Woman</option>
+                <option value="Non-Binary">Non-Binary</option>
+                <option value="No Gender">
+                  Agender/I don’t identify with any gender
+                </option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to state">Prefer not to state</option>
               </select>
             </div>
 

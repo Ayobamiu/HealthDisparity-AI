@@ -16,6 +16,7 @@ import { LinkOutlined } from "@ant-design/icons";
 import { MedicineBoxOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import ChatDrawer from "../Components/ChatDrawer";
+import SignInForm from "../Components/SignInForm";
 
 export default function DisparityResult() {
   const needsToBeSaved = getQueryParam("needsToBeSaved") === "on";
@@ -46,7 +47,7 @@ export default function DisparityResult() {
       glucose: glucose || "",
       bmi: bmi || "",
     };
-
+    if (!user) return;
     (async () => {
       setLoadingHealthData(true);
       setLoadingUserData(true);
@@ -89,10 +90,22 @@ export default function DisparityResult() {
     })();
   }, [user]);
 
+  if (!user)
+    return (
+      <div className="w-full flex items-center justify-center m-8 min-h-[50vh]">
+        <SignInForm title="Sign In to get started" />
+      </div>
+    );
+
   return (
     <div>
       <div id="disparitiesResult" className="min-h-screen bg-gray-100">
-        <Spin spinning={loadingHealthData || loadingUserData} />
+        <div className="w-full flex justify-center">
+          <Spin
+            className="m-8"
+            spinning={loadingHealthData || loadingUserData}
+          />
+        </div>
         <div className="p-8 max-w-5xl mx-auto">
           {aiData && <HealthDashboard data={aiData} />}
         </div>
@@ -127,7 +140,11 @@ const HealthDashboard: React.FC<{ data: HealthData }> = ({ data }) => {
   );
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="p-4">
+      <h4 className="text-2xl font-bold dark:text-white mb-8">
+        Your health metrics compared to national averages
+      </h4>
+
       {renderMetricCard(bloodPressure, "Blood Pressure")}
       {renderMetricCard(glucose, "Blood Glucose")}
       {renderMetricCard(bmi, "BMI")}

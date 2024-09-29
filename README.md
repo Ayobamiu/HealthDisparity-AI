@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+## Inspiration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My inspiration for the HealthDisparity AI project stemmed from a personal health crisis I faced last summer without insurance, which made accessing quality healthcare incredibly challenging. This experience changed dramatically when I discovered [**Helping Hands Wellness Center**](https://www.helpinghandsmedicine.com/wellness-center), a facility that provides free medical resources to break the cycle of generational poverty. Their support opened my eyes to the critical issue of healthcare accessibility.
 
-## Available Scripts
+Upon returning home, my roommate—who is also an international student from Pakistan—fell ill and struggled to find affordable healthcare. Together, we realized that many international students encounter similar obstacles, not just with healthcare but also with access to food and transportation. This reality inspired me to create a project that would raise awareness of available free resources to address various social determinants of health.
 
-In the project directory, you can run:
+## What it does
 
-### `npm start`
+HealthDisparity AI is a platform designed to assist individuals, particularly from underrepresented communities, in accessing essential healthcare resources and insights. The project provides:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Health Disparity Analytics**: Users can gain valuable insights into their health metrics by comparing them to national and regional averages. Our dashboard aggregates data from trusted sources, offering a clearer picture of individual health landscapes and highlighting areas for improvement.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **AI Assistant for Personalized Recommendations**: Chat with our AI assistant to receive tailored health tips and guidance. From dietary suggestions to exercise routines, users can access actionable advice designed to fit their unique needs. The assistant also offers mental health support, promoting overall well-being.
 
-### `npm test`
+3. **Culturally Competent Healthcare Provider Matching**: Users can find healthcare providers who understand and respect their cultural backgrounds. Our search tool connects individuals with specialists committed to providing culturally competent care, ensuring they receive appropriate support tailored to their needs.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Social Determinants of Health Tracker**: This feature allows users to monitor non-medical factors affecting their health, such as access to nutritious food or safe housing. The platform provides personalized recommendations for community resources, including grants, local urban farms, and other support services that can enhance their well-being.
 
-### `npm run build`
+## How we built it
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I designed the project to be simple and intuitive, prioritizing accessibility. Here’s a breakdown of the technology stack utilized:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: Developed using **React**, with design components from **Ant Design** and **Flowbite** for a streamlined user experience.
+- **Backend**: The server-side is powered by **Node.js** and **ExpressJS**, managing API requests and facilitating component interactions.
+- **Database and Authentication**: Integrated **Firebase** for real-time database management and secure user authentication.
+- **Deployment:** The frontend is hosted on **Vercel**, and the backend hosted is on **Glitch** providing fast and reliable deployment solutions.
+- **AI Assistant**: Utilized the **OpenAI API** to power the AI Health Assistant and provide health insights and resource recommendations.
+- **Validation**: Used **Zod** for input validation and error handling.
+- **Security**: Implemented **Helmet** and **CORS** for enhanced security.
+- **OpenAI Model**: Selected the **gpt-4o-2024-08-06** model, which supports Structured Outputs essential for the `getResourcesRecommendations` and `getHealthInsights` functions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Challenges we ran into
 
-### `npm run eject`
+One of the main challenges was sourcing reliable data for wellness centers and resources offering free assistance. Additionally, ensuring that the AI assistant provides relevant and culturally sensitive information for users from diverse backgrounds proved to be another challenge.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Accomplishments that we're proud of
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I successfully integrated various data sources, allowing the platform to deliver accurate health insights and connect users with culturally competent healthcare providers. The AI Health Assistant has effectively improved user interactions, making it easier for individuals to articulate their health concerns.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## What we learned
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Throughout this project, I discovered that many individuals, especially from underrepresented communities, are often unaware of the wealth of resources available to them. Additionally, I learned the importance of making these resources easily accessible and comprehensible. Integrating the AI Health Assistant allowed users to better articulate their health issues, which ultimately helps them receive more relevant support.
 
-## Learn More
+## What's next for HealthDisparity AI
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Moving forward, I plan to enhance the AI Health Assistant's capabilities by refining its ability to provide more nuanced and culturally sensitive responses. I also aim to expand the dataset sources and partnerships with wellness centers and community organizations to improve resource availability. Ultimately, the goal is to create a robust platform that not only connects users to healthcare services but also empowers them with the knowledge to navigate their health journeys effectively.

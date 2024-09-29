@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import { UserData } from "../Data/types";
 import { getUserData } from "../serverless/firebase/app";
+import SignInForm from "../Components/SignInForm";
 
 export default function UserDataScreen() {
   const { user } = useAuth();
@@ -25,10 +26,20 @@ export default function UserDataScreen() {
     }
   }, [user]);
 
+  if (!user)
+    return (
+      <div className="w-full flex items-center justify-center m-8 min-h-[50vh]">
+        <SignInForm title="Sign In to get started" />
+      </div>
+    );
+
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="p-8 max-w-5xl mx-auto">
-        <Spin spinning={findingExistingDoc} />
+        <div className="w-full flex justify-center">
+          <Spin className="m-8" spinning={findingExistingDoc} />
+        </div>
+
         {!userData && !findingExistingDoc && <Empty description="No data" />}
         {userData && (
           <Card

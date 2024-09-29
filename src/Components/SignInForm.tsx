@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import { UserOutlined, UserAddOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  UserAddOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 import {
   Alert,
   AlertProps,
   Button,
   Drawer,
+  Dropdown,
   Form,
   FormProps,
   Input,
-  Popconfirm,
+  MenuProps,
   Space,
 } from "antd";
 import { useAuth } from "../Context/AuthContext";
@@ -83,7 +88,30 @@ const SignInForm: React.FC<{ title?: string; className?: string }> = ({
       ).then(onSuccess);
     }
   };
-
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: "My Account",
+      disabled: true,
+    },
+    {
+      type: "divider",
+    },
+    {
+      key: "2",
+      label: user?.email ?? "",
+    },
+    {
+      key: "3",
+      label: "Sign Out",
+      icon: <LogoutOutlined />,
+      danger: true,
+      title: "Sign Out",
+      onClick: async () => {
+        await signOut(auth).then(() => setShowPop(false));
+      },
+    },
+  ];
   return (
     <>
       <div className="hidden lg:block">
@@ -110,17 +138,15 @@ const SignInForm: React.FC<{ title?: string; className?: string }> = ({
         </Button>
       </div>
 
-      <Popconfirm
+      <Dropdown
         open={showPop}
-        placement="bottomRight"
-        title={"Sign Out"}
-        okText="Yes"
-        cancelText="No"
-        onConfirm={async () => {
-          await signOut(auth).then(() => setShowPop(false));
-        }}
-        onCancel={() => setShowPop(false)}
-      ></Popconfirm>
+        trigger={["click"]}
+        onOpenChange={() => setShowPop(false)}
+        menu={{ items }}
+      >
+        <div></div>
+      </Dropdown>
+
       <Drawer
         title={signUp ? "Sign up" : "Sign in"}
         onClose={onClose}
