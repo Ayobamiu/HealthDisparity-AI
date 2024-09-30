@@ -187,12 +187,7 @@ export type AccessRecommendation = {
 
 export type AccessTrends = {
   past6Months: {
-    January: number;
-    February: number;
-    March: number;
-    April: number;
-    May: number;
-    June: number;
+    [month: string]: number; // Dynamic month keys with numeric values
   };
   averageTrend: string;
 };
